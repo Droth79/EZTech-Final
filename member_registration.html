@@ -1,0 +1,207 @@
+<html> 
+
+	<head> 
+
+		<title>Registration</title> 
+
+		<script type = “text/javascript”> 
+
+		function validate() { 
+		
+			if( document.myForm.First.value == "") {
+				alert("Please provide your First name!");
+				document.myForm.First.focus();
+				return false;
+			}
+			
+			if( document.myForm.Last.value == "") {
+				alert("Please provide your Last name!");
+				document.myForm.Last.focus();
+				return false;
+			}
+			
+			if( document.myForm.Email.value == "") {
+				alert("Please provide your Email address!");
+				document.myForm.Email.focus();
+				return false;
+			}
+			
+			if( document.myForm.Password.value == "" || isNaN(document.myForm.Password.value) ||
+				document.myForm.Password.value.length != 8) {
+				alert("Please provide a password in the format ########.");
+				document.myForm.Password.focus();
+				return false;
+			}
+			
+			if( document.myForm.Address.value == "") {
+				alert("Please provide your Home Address!");
+				document.myForm.Password.focus();
+				return false;
+			}
+			
+			if( document.myForm.Phone.value == "" || isNaN(document.myForm.Phone.value) ||
+				document.myForm.Phone.length != 10) {
+				alert("Please provide a phone number in the format of ##########.");
+				document.myForm.Phone.focus();
+				return false;
+			}
+
+			if( document.myForm.Name.value == “” ) { 
+
+				alert( “Please provide your name!” ); 
+
+				document.myForm.Name.focus(); 
+
+				return false; 
+
+			} 
+
+			if( document.myForm.Number.value == “”) { 
+
+				alert(“Please provide your Card Number!”); 
+
+				document.myForm.Number.focus(); 
+
+				return false; 
+
+			} 
+
+			if( document.myForm.Code.value == “” || isNaN(document.myForm.Code.value) || 
+
+				document.myForm.Code.value.length != 3) { 
+
+				alert(“Please provide the Cards Security Number in the format ###.”); 
+
+				document.myForm.Code.focus(); 
+
+				return false; 
+
+			} 
+
+			if( document.myForm.Date.value == “”) { 
+
+				alert(“Please provide your Expiry Date!”); 
+
+				return false; 
+
+			} 
+
+			return(true); 
+
+		} 
+
+		</script> 
+		
+	</head> 
+	
+	<h2>Member Registration</h2>
+	<body> 
+
+		<form action = “/cgi-bin/test.cgi” name = “myForm” onsubmit = “return(validate());”> 
+
+			<table cellspacing = “2” cellpadding = “2” border = “1”> 
+			
+				<tr>
+					<td align = "right">First Name</td>
+					<td><input type = "text" name = "First" /></td>
+				</tr>
+				
+				<tr>
+					<td align = "right">Last Name</td>
+					<td><input type = "text" name = "Last" /></td>
+				</tr>
+				
+				<tr>
+					<td align = "left">Email</td>
+					<td><input type = "text" name = "Email" /></td>
+				</tr>
+				
+				<tr>
+					<td align = "left">Password</td>
+					<td><input type = "text" name = "Password" /></td>
+				</tr>
+				
+				<tr>
+					<td align = "left">Phone</td>
+					<td><input type = "text" name = "Phone" /></td>
+				</tr>
+
+				<tr> 
+
+					<td align = “right”>Name</td> 
+					<td><input type = “text” name = “Name” /></td> 
+
+				</tr> 
+
+				<tr> 
+
+					<td align = “right”>Number</td> 
+					<td><input type = “text” name = “Card Number” /></td> 
+
+				</tr> 
+
+				<tr> 
+
+					<td align = “right”>Code</td> 
+
+					<td><input type = “text” name = “Security Code” /></td> 
+
+				</tr> 
+
+				<tr> 
+
+					<td align = “right>Expiry Date</td> 
+
+					<td> 
+
+						<form action="/action_page.php">
+							<input type="date" id="date" name="date">
+						</form>
+
+					</td> 
+
+				</tr> 
+
+				<tr> 
+
+					<td align = “right”></td> 
+
+				</tr> 
+
+			</table> 
+
+			<input type="submit" value="Submit">
+			
+		</form> 
+
+	</body> 
+
+</html> 
+
+<h2>Video Selection</h2>
+<html>
+<body>
+<form action="member_registration.php" method="post">
+First Name: <input type="text" name="first"></br>
+
+Password: <input type="text" name="password"></br>
+
+Video Selection:
+<input type="radio" name="video"
+<?php if (isset($video) && $video=="Nh0F_okJAkA") echo "checked";?>
+	<a href="https://www.youtube.com/embed/Nh0F_okJAkA">Mobile Development</a>
+	<input type="radio" name="video2"
+<?php if (isset($video2) && $video2=="B8azMzrluHE") echo "checked";?>
+	<a href="https://www.youtube.com/embed/B8azMzrluHE">Web Development</a>
+	<input type ="radio" name="video3"
+<?php if (isset($video3) && $video3=="nhZMH8oX6xI") echo "checked";?>
+	<a href="https://www.youtube.com/embed/nhZMH8oX6xI">Server Side Programming</a>
+	<input type ="radio" name="video4"
+<?php if (isset($video4) && $video4=="z06QR-tz1_o") echo "checked";?>
+	<a href="https://www.youtube.com/embed/z06QR-tz1_o">Making Your First Game</a>
+	</br>
+Please Click to Watch!
+</form>
+
+</body>
+</html>
